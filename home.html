@@ -25,10 +25,7 @@
 
             var initialLoc = new google.maps.LatLng(34.0222, -118.2843);
             var searchLoc= new  google.maps.LatLng(lat,long)
-            console.log(searchLoc)
             pyrmont = searchLoc || initialLoc
-
-            console.log(pyrmont)
 
             map = new google.maps.Map(document.getElementById('map-canvas'), {
                 center:pyrmont,
@@ -50,7 +47,6 @@
 
             var request = {
                 location: pyrmont,
-//               bounds:lanLat,
                 radius:500,
 
               types:['store', 'food','school', 'theater', 'university','library', 'city_hall','gym', 'stadium','park','establishmen','health','place_of_worship','church', 'book_store'],
@@ -89,9 +85,7 @@
                 strokeOpacity: 1.0,
                 strokeWeight: 2
             });
-
-          console.log(flightPath) ;
-            console.log(flightPlanCoordinates)
+           
             flightPath.setMap(map);
 
         }
@@ -109,7 +103,6 @@
         }
         function setLocation(){
              var location =(document.getElementById('startPoint').value.split(','))
-            console.log("location:"+location)
            if (location){
             lat =location[0];
             long=location[1];
